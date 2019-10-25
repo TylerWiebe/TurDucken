@@ -955,8 +955,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  FarmWidth: 2
-  FarmHeight: 2
+  FarmWidth: 4.2
+  FarmHeight: 3
 --- !u!4 &1451199241
 Transform:
   m_ObjectHideFlags: 0
