@@ -10,13 +10,16 @@ public class WorldController : MonoBehaviour
     private bool timerStart = true;
     public Text timerText;
     GameObject farmer = GameObject.Find("Farm");
-    FarmerController s = farmer.GetComponent<FarmerController>();
+    
     GameObject chicken = GameObject.Find("Chicken");
-    ChickenController cs = chicken.GetComponent<ChickenController>();
+    
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        FarmerController s = farmer.GetComponent<FarmerController>();
+        ChickenController cs = chicken.GetComponent<ChickenController>();
+
         if (timerStart)
         {
             timeLeft -= Time.deltaTime;
