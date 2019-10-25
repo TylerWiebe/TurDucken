@@ -8,11 +8,18 @@ public class WorldController : MonoBehaviour
 {
     private float timeLeft = 60f;
     private bool timerStart = true;
-    public Text timerText;
-    GameObject farmer = GameObject.Find("Farm");
-    
-    GameObject chicken = GameObject.Find("Chicken");
-    
+    //public Text timerText;
+    private GameObject farmer;
+    private GameObject chicken;
+
+    private void Start()
+    {
+        farmer = GameObject.Find("Farm");
+        chicken = GameObject.Find("Chicken");
+        
+        //timerText = .Find("Text");
+    }
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -20,18 +27,18 @@ public class WorldController : MonoBehaviour
         FarmerController s = farmer.GetComponent<FarmerController>();
         ChickenController cs = chicken.GetComponent<ChickenController>();
 
-        if (timerStart)
-        {
-            timeLeft -= Time.deltaTime;
-            timerText.text = timeLeft.ToString();
-        }
+        //if (timerStart)
+        //{
+        //    timeLeft -= Time.deltaTime;
+        //    timerText.text = timeLeft.ToString();
+        //}
 
-        
+
         //Check win
-        if (s.getChickenHit())
-        {
+        //if (s.getChickenHit())
+        //{
 
-        }
+        //}
     }
 
     //resets the game
