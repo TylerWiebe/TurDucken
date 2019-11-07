@@ -8,6 +8,9 @@ public class FarmerController : MonoBehaviour
     public float Delay = 0f;
     private bool hasHitChicken = false;
     private bool gameGoing = false;
+    private int bombNum = 0;
+    public AnimationClip bombDrop;
+    public AnimationClip Explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +28,15 @@ public class FarmerController : MonoBehaviour
             transform.position = crosshairPos;
             if (Input.GetMouseButtonDown(0))
             {
+                GameObject bombAnim;
+                string tmp = "Bomb_" + bombNum.ToString();
+                bombNum += 1;
+                bombAnim = new GameObject(tmp);
+                Animation anim = bombAnim.AddComponent<Animation>();
+                anim.AddClip(bombDrop, "bombDrop", 0, 7);
+                anim.AddClip(Explosion, "explosion", 0, 6);
+                bombAnim.transform.position = crosshairPos;
+                anim.Play();
                 //DelayFunction();
                 GameObject chicken = GameObject.Find("Chicken");
                 Vector3 chickenPos = chicken.transform.position;

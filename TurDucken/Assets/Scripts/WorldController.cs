@@ -40,7 +40,7 @@ public class WorldController : MonoBehaviour
                 timeLeft = 0;
                 BetweenGames = true;
                 pauseGame();
-                winBanners(false, false);
+                winBanners(false, true);
             }
             timerText.text = timeLeft.ToString();
 
@@ -49,12 +49,14 @@ public class WorldController : MonoBehaviour
             if (fs.getChickenHit())
             {
                 pauseGame();
-                winBanners(false, true);
+                winBanners(false, false);
                 BetweenGames = true;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
+            GameObject WinBanner = GameObject.Find("WinBanner");
+            WinBanner.transform.position = new Vector3(0,-15f,0);
             StartGame();
         }
 
@@ -90,6 +92,8 @@ public class WorldController : MonoBehaviour
         if (startMenu)
         {
             WinBanner.GetComponent<SpriteRenderer>().sprite = StartMenuSprite;
+            WinBanner.transform.position = new Vector3(-0.055f, -0.065f, 0f);
+            WinBanner.GetComponent<Transform>().localScale = new Vector3(0.975f, 0.935f, 0);
         }
         else
         { 
@@ -97,11 +101,17 @@ public class WorldController : MonoBehaviour
             {
                 Debug.Log("Chicken Win");
                 WinBanner.GetComponent<SpriteRenderer>().sprite = ChickenWinSprite;
+                //translate x = -0.055   y=-0.065    ==> y = -11
+                WinBanner.transform.position = new Vector3(-0.055f, -0.065f, 0f);
+                //scale x=0.975   y=0.935
+                WinBanner.GetComponent<Transform>().localScale = new Vector3(0.975f, 0.935f, 0);
             }
             else
             {
                 Debug.Log("Farmer Win");
                 WinBanner.GetComponent<SpriteRenderer>().sprite = FarmerWinSprite;
+                WinBanner.transform.position = new Vector3(-0.055f, -0.065f, 0f);
+                WinBanner.GetComponent<Transform>().localScale = new Vector3(0.975f, 0.935f, 0);
             }
 
         }
