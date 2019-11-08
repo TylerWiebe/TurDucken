@@ -47,3 +47,6 @@ TagManager:
   - name: Crosshair
     uniqueID: 1646341409
     locked: 0
+  - name: Menu Banner
+    uniqueID: 1044074053
+    locked: 0

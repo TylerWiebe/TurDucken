@@ -28,15 +28,15 @@ public class FarmerController : MonoBehaviour
             transform.position = crosshairPos;
             if (Input.GetMouseButtonDown(0))
             {
-                GameObject bombAnim;
-                string tmp = "Bomb_" + bombNum.ToString();
-                bombNum += 1;
-                bombAnim = new GameObject(tmp);
-                Animation anim = bombAnim.AddComponent<Animation>();
-                anim.AddClip(bombDrop, "bombDrop", 0, 7);
-                anim.AddClip(Explosion, "explosion", 0, 6);
-                bombAnim.transform.position = crosshairPos;
-                anim.Play();
+                //GameObject bombAnim;
+               // string tmp = "Bomb_" + bombNum.ToString();
+                //bombNum += 1;
+                //bombAnim = new GameObject(tmp);
+                //Animation anim = bombAnim.AddComponent<Animation>();
+                //anim.AddClip(bombDrop, "bombDrop", 0, 7);
+                //anim.AddClip(Explosion, "explosion", 0, 6);
+                //bombAnim.transform.position = crosshairPos;
+                //anim.Play();
                 //DelayFunction();
                 GameObject chicken = GameObject.Find("Chicken");
                 Vector3 chickenPos = chicken.transform.position;
