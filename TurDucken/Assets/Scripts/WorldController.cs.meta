@@ -3,7 +3,11 @@ guid: 65944967343abce44b0f062eb83eedb5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - timerText: {instanceID: 0}
+  - StartMenuSprite: {instanceID: 0}
+  - ChickenWinSprite: {fileID: 21300000, guid: 02233c14feaf8d44e907eea8956654c9, type: 3}
+  - FarmerWinSprite: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
